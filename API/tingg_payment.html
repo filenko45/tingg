@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tingg</title>
+    <script src="./tingg.js"></script>
+</head>
+
+
+<body>
+    <button onclick=getAuthToken()>Get auth token</button> 
+    <button onclick=initiateRequest()>Initiate request</button> 
+    <button onclick=chargeRequest()>Charge request</button> 
+    <button onclick=checkRequestStatus()>Check request status</button> 
+    <button onclick=getPaymentOptions()>Get payment options</button> 
+    <button onclick=acknowledgePayment()>Acknowledge payment</button> 
+    <!-- POST /requests/initiate-refund
+    https://tingg.gitbook.io/checkout/checkout-api/other-functions#initiating-refunds -->
+    <!-- POST /authentication/settings
+    https://tingg.gitbook.io/checkout/checkout-api/other-functions#authentication-settings -->
+</body>
+</html>
