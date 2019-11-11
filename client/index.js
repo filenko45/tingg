@@ -26,6 +26,7 @@ const payload = {
     paymentWebhookUrl: "http://ar-diploma-work.de"
 };
 
+
 document.getElementById("tingg-express-checkout-button").addEventListener("click", async function () {
 
     let res = await fetch(encryptionURL, {
@@ -37,17 +38,20 @@ document.getElementById("tingg-express-checkout-button").addEventListener("click
         body: JSON.stringify(payload),
     });
 
+    const data = {}
+    
     if (res.ok) {         
         let json = await res.json(); 
-        payload.accessKey = json.accessKey;
-        payload.params = json.params;
+        data.accessKey = json.accessKey;
+        data.params = json.params;
+        data.countryCode = json.countryCode;
     } else {
         console.log("HTTP-Error: " + res.status);
     }
 
     Tingg.renderCheckout({
         encryptionURL: encryptionURL,
-        merchantProperties: payload,
+        merchantProperties: data,
         checkoutType: checkoutType
     })
 });
